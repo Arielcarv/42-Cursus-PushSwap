@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:33:48 by arcarval          #+#    #+#             */
-/*   Updated: 2022/11/27 16:48:04 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/24 19:50:14 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	int		str2_length;
 	char	*dest;
 
-	if (!str1 || ! str2)
+	if (!str1 || !str2)
 		return (0);
 	str1_length = ft_strlen(str1);
 	str2_length = ft_strlen(str2);
