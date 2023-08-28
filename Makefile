@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2023/08/24 18:21:44 by arcarval         ###   ########.fr        #
+#    Updated: 2023/08/28 00:13:05 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(NAME):		libft printf $(PUSH_SWAP_OBJS)
 				@echo "$(CYAN) PUSH_SWAP - I'm ready to work! 🧠$(RESET)"
 
 libft:
-				@make -C $(LIBFT)
+				@make bonus -C $(LIBFT)
 
 printf:
 				@make -C $(FT_PRINTF)
