@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 22:54:24 by arcarval          #+#    #+#             */
-/*   Updated: 2022/11/28 23:40:19 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:30:28 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_stack *lst)
 {
-	t_list	*current_node;
+	t_stack	*current_node;
 	int		size;
 
 	current_node = lst;

@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 23:46:37 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 12:59:51 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:29:46 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,22 @@ void	ft_putstr_fd(char *str, int file_descriptor);
 void	ft_putendl_fd(char *str, int file_descriptor);
 void	ft_putnbr_fd(int number, int file_desciptor);
 
-typedef struct s_list
+typedef struct s_stack
 {
-	int				content;
-	struct s_list	*next;
-}	t_list;
+	int				nbr;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
-t_list	*ft_lstnew(int content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(int));
-void	ft_lstclear(t_list **lst, void (*del)(int));
-void	ft_lstiter(t_list *lst, void (*function)(int));
-t_list	*ft_lstmap(t_list *lst, int *(*function)(int), void (*del)(int));
+t_stack	*ft_lstnew(int nbr);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
+int		ft_lstsize(t_stack *lst);
+t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+void	ft_lstdelone(t_stack *lst, void (*del)(int));
+void	ft_lstclear(t_stack **lst, void (*del)(int));
+void	ft_lstiter(t_stack *lst, void (*function)(int));
+t_stack	*ft_lstmap(t_stack *lst, int *(*function)(int), void (*del)(int));
 
 #endif

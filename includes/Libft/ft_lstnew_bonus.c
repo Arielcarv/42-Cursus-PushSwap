@@ -6,20 +6,20 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 17:58:24 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 12:51:03 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:31:13 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+t_stack	*ft_lstnew(int nbr)
 {
-	t_list	*new_node;
+	t_stack	*new_node;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
-	new_node->content = content;
+	new_node->nbr = nbr;
 	new_node->next = NULL;
 	return (new_node);
 }

@@ -6,16 +6,16 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:38:43 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 12:55:35 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:30:28 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(int))
+void	ft_lstclear(t_stack **lst, void (*del)(int))
 {
-	t_list	*next_node;
-	t_list	*current_node;
+	t_stack	*next_node;
+	t_stack	*current_node;
 
 	current_node = *lst;
 	if (current_node && del)
