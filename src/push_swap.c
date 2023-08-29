@@ -6,91 +6,51 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/28 00:14:06 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:10:47 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char *ft_strjoin1(char *str1, char str2)
+void	ft_printlist(t_list *lst)
 {
-	int str1_length;
-	int str2_length;
-	char *dest;
-
-	if (!str1)
-		str1 = ft_calloc(1, sizeof(char));
-	if (!str2)
+	ft_printf("\nPRINT LIST: ");
+	while (lst)
 	{
-		return (NULL);
+		ft_printf("%d ", lst->content);
+		lst = lst->next;
 	}
-	str1_length = ft_strlen(str1);
-	str2_length = 1;
-	int size = str1_length + str2_length + 1;
-	dest = malloc((size) * sizeof(char));
-	ft_strlcpy(dest, str1, str1_length + 1);
-	printf("%s", dest);
-	printf("%d", size);
-	// dest[size - 1] = str2;
-	dest[size] = '\0';
-	// free(str1);
-	return (dest);
+	ft_printf("\n");
 }
 
-size_t ft_strlcat1(char *dest, char src, size_t size)
-{
-	size_t src_len;
-	size_t dest_len;
-
-	if (!src || !dest)
-		return (0);
-	src_len = 1;
-	dest_len = ft_strlen(dest);
-	if (size < dest_len)
-		return (size + src_len);
-
-	dest[dest_len] = src;
-	dest[dest_len + 1] = '\0';
-	return (dest_len + src_len);
-}
-
-int	valid_input(char **argv)
+t_list	*process_input(int argc, char **argv)
 {
 	int		i;
-	int		j;
-	char	*merged_input;
+	t_list	*new_input_list;
+	int		current_number;
+	char	**input_list;
 
+	if (argc == 2)
+		input_list = ft_split(argv[1], ' ');
+	else
+		input_list = argv;
+	new_input_list = NULL;
 	i = 1;
-	// Some arguments aren’t integers,
-	merged_input = "  ";
-	while(argv[i])
+	while (input_list[i])
 	{
-		j = 0;
-		while(argv[i][j])
-		{
-			write(1, &argv[i][j], 1);
-			write(1, "\n", 1);
-			ft_strlcat1(merged_input, argv[i][j], 1);
-			j++;
-		}
+		current_number = ft_atoi(input_list[i]);
+		ft_lstadd_front(&new_input_list, ft_lstnew(current_number));
 		i++;
 	}
-	// Some arguments are bigger than an integer
-	// There are duplicates
-	// i = 0;
-	// while (merged_input)
-	// {
-	// 	write(1, &merged_input[i++], 1);
-	// }
-	printf("\n%s", merged_input);
-	return (0);
+	return (new_input_list);
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc <= 1)
 		return (0);
-	if (!valid_input(argv))
+	// process_input(argc, argv);
+	if (!process_input(argc, argv))
 	{
 		ft_printf("Error\n");
 		exit(1);
@@ -98,6 +58,5 @@ int	main(int argc, char **argv)
 	ft_printf("ARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
-	
 	return (0);
 }
