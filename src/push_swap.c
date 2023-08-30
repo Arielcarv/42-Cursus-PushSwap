@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 17:58:56 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/30 20:00:30 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_stack	*process_input(int argc, char **argv)
 	while (input_stack[i])
 	{
 		current_number = ft_atoi(input_stack[i]);
-		ft_lstadd_front(&new_input_stack, ft_lstnew(current_number));
+		ft_lstadd_back(&new_input_stack, ft_lstnew(current_number));
 		i++;
 	}
 	if (ft_check_duplicate(new_input_stack))
