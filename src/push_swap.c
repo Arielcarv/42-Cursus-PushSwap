@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/30 20:00:30 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/08/30 20:25:27 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int	main(int argc, char **argv)
 	}
 	// For radix needs to build an index with stack
 
+	ft_printf("List Size: %d", ft_lstsize(stack_a));
 	ft_printf("ARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
