@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/30 20:25:27 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:10:01 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,27 @@ t_stack	*process_input(int argc, char **argv)
 	return (new_input_stack);
 }
 
+int	ft_is_list_sorted(t_stack *stack_a)
+{
+	int	current_nbr;
+
+	current_nbr = stack_a->nbr;
+	while (stack_a)
+	{
+		if (current_nbr > stack_a->nbr)
+			return (0);
+		current_nbr = stack_a->nbr;
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
+
+void	ft_free(int nbr)
+{
+	(void)nbr;
+}
+
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -84,12 +105,18 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		exit(1);
 	}
+	if (ft_is_list_sorted(stack_a))
+		printf("IT'S SORTED\n");
+	else
+		printf("NOT SORTED\n");
+		
 	// For radix needs to build an index with stack
-
+	// build_index(stack_a);
 	ft_printf("List Size: %d", ft_lstsize(stack_a));
-	ft_printf("ARGC: %d", argc);
+	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
 	// By the end of it all needs to clean stacks
+	ft_lstclear(&stack_a, ft_free);
 	return (0);
 }
