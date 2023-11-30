@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2023/11/30 18:27:41 by arcarval         ###   ########.fr       */
+/*   Created: 2023/11/30 18:19:27 by arcarval          #+#    #+#             */
+/*   Updated: 2023/11/30 18:27:24 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include "Libft/libft.h"
-# include "ft_printf/ft_printf.h"
+void	swap(t_stack **stack)
+{
+	t_stack	*temp_1;
+	t_stack	*temp_2;
 
-void	swap_a(t_stack **stack_a);
+	if (ft_lstsize(*stack) == 0 || ft_lstsize(*stack) == 1)
+		return;
+	temp_1 = *stack;
+	temp_2 = temp_1->next;
+	temp_1->next = temp_1->next->next;
+	temp_2->next = temp_1;
+	*stack = temp_2;
+}
 
-#endif
+void	swap_a(t_stack **stack_a)
+{
+	swap(stack_a);
+	ft_printf("sa\n");
+}
