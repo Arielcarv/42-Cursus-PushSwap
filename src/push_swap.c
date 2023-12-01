@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/11/30 18:32:13 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:02:41 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,12 @@ int	main(int argc, char **argv)
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
-	// Test swap_a
+	/* Test swap_a */
 	swap_a(&stack_a);
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
-	// By the end of it all needs to clean stacks
+	
+	/* By the end of it all needs to clean stacks */
 	ft_lstclear(&stack_a, ft_free);
 	return (0);
 }
