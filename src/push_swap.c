@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/01 17:02:41 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:03:13 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_printlist(t_stack *lst)
 {
-	ft_printf("\nPRINT LIST: ");
+	ft_printf("PRINT LIST: ");
 	while (lst)
 	{
 		ft_printf("%d ", lst->nbr);
@@ -116,8 +116,8 @@ int	main(int argc, char **argv)
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
-	/* Test swap_a */
-	swap_a(&stack_a);
+	/* Test swap_ss */
+	swap_ss(&stack_a, &stack_b);
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
 	

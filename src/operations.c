@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:19:27 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/01 17:00:53 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:01:00 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,11 @@ void	swap_b(t_stack **stack_b)
 {
 	swap(stack_b);
 	ft_printf("sb\n");
+}
+
+void	swap_ss(t_stack **stack_a, t_stack **stack_b)
+{
+	swap(stack_a);
+	swap(stack_b);
+	ft_printf("ss\n");
 }
