@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:19:27 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/04 18:31:22 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:06:33 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_stack **stack)
 	t_stack	*temp_2;
 
 	if (ft_lstsize(*stack) == 0 || ft_lstsize(*stack) == 1)
-		return;
+		return ;
 	temp_1 = *stack;
 	temp_2 = temp_1->next;
 	temp_1->next = temp_1->next->next;

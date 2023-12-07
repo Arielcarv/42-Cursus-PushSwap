@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:50:21 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/06 19:10:56 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:06:35 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push(t_stack **stack1, t_stack **stack2)
 	t_stack	*temp_3;
 
 	if (ft_lstsize(*stack1) == 0)
-		return;
+		return ;
 	temp_1 = *stack1;
 	temp_2 = temp_1->next;
 	temp_1->next = NULL;

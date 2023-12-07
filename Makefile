@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2023/12/05 19:52:59 by arcarval         ###   ########.fr        #
+#    Updated: 2023/12/07 19:07:11 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ fclean:			clean
 				@echo "$(CYAN) PUSH_SWAP - Bath is so good!  Now it's over. 🧼✨$(RESET)"
 
 norm:
-				norminette -R CheckForbiddenSourceHeader $(PUSH_SWAP_SRCS) $(HEADER) ./Libft/*.c ./Libft/*.h ./ft_printf/*.c ./ft_printf/*.h
+				norminette -R CheckForbiddenSourceHeader $(addprefix $(SRC_PATH), $(PUSH_SWAP_SRCS)) $(INCLUDES_PATH)$(HEADER) $(INCLUDES_PATH)Libft/*.c  $(INCLUDES_PATH)Libft/*.h  $(INCLUDES_PATH)ft_printf/*.c  $(INCLUDES_PATH)ft_printf/*.h
 
 re:				fclean all
 
