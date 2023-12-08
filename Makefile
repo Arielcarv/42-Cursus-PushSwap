@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2023/12/07 19:07:11 by arcarval         ###   ########.fr        #
+#    Updated: 2023/12/08 18:54:05 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ FT_PRINTF			=	$(INCLUDES_PATH)ft_printf/
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror
 
-PUSH_SWAP_SRCS		=	push_swap.c	swap_operations.c	push_operations.c
+PUSH_SWAP_SRCS		=	push_swap.c	swap_operations.c	push_operations.c	rotate_operations.c
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
 INCLUDES			=	-I $(INCLUDES_PATH)
 
