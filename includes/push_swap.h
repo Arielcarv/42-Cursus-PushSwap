@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/10 23:04:16 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/11 08:35:37 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	push_b(t_stack **stack_a, t_stack **stack_b);
 void	rotate_a(t_stack **stack_a);
 void	rotate_b(t_stack **stack_b);
 void	rotate_rr(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_a(t_stack **stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/10 23:03:14 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/11 08:38:02 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int	main(int argc, char **argv)
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
-	/* Test rotate */
-	rotate_rr(&stack_a, &stack_b);
+	/* Test reverse rotate */
+	reverse_rotate_a(&stack_a);
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
 	/* By the end of it all needs to clean stacks */
