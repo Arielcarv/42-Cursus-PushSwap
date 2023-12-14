@@ -6,22 +6,12 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/13 20:53:25 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/14 20:55:24 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_printlist(t_stack *lst)
-{
-	ft_printf("PRINT LIST: ");
-	while (lst)
-	{
-		ft_printf("%d ", lst->nbr);
-		lst = lst->next;
-	}
-	ft_printf("\n");
-}
 
 int	ft_check_duplicate(t_stack *stack_a)
 {
@@ -83,11 +73,6 @@ int	ft_is_list_sorted(t_stack *stack_a)
 	return (1);
 }
 
-void	ft_free(int nbr)
-{
-	(void)nbr;
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -114,11 +99,12 @@ int	main(int argc, char **argv)
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
-	/* Test reverse rotate */
-	reverse_rotate_rrr(&stack_a, &stack_b);
+
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
+
 	/* By the end of it all needs to clean stacks */
 	ft_lstclear(&stack_a, ft_free);
+	ft_lstclear(&stack_b, ft_free);
 	return (0);
 }

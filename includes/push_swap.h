@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/13 20:53:15 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/14 20:56:44 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include "Libft/libft.h"
 # include "ft_printf/ft_printf.h"
+
+void	ft_printlist(t_stack *lst);
+void	ft_free(int nbr);
 
 void	swap_a(t_stack **stack_a);
 void	swap_b(t_stack **stack_a);
