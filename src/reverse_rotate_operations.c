@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 08:34:21 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/13 20:53:21 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:18:26 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse_rotate(t_stack **stack)
 	t_stack	*ptr;
 
 	if (ft_lstsize(*stack) == 0 || ft_lstsize(*stack) == 1)
-		return;
+		return ;
 	len = ft_lstsize(*stack);
 	temp_1 = *stack;
 	ptr = *stack;
