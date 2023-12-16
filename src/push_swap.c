@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/14 20:55:24 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/15 22:59:57 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,15 @@ int	ft_is_list_sorted(t_stack *stack_a)
 	return (1);
 }
 
+void	sorting_switch(int argc, t_stack **stack_a)
+{
+	t_stack	*temp_1;
+
+	temp_1 = *stack_a;
+	if (argc == 3 && (temp_1->nbr > temp_1->next->nbr))
+			swap_a(stack_a);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -99,6 +108,9 @@ int	main(int argc, char **argv)
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV: %s", argv[0]);
 	ft_printf("\n");
+
+	// sorting_switch(argc, &stack_a, &stack_b);
+	sorting_switch(argc, &stack_a);
 
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
