@@ -6,48 +6,23 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/17 16:00:10 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:16:38 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_three(t_stack **stack_a)
-{
-	int	first;
-	int	second;
-	int	third;
-
-	first = (*stack_a)->nbr;
-	second = (*stack_a)->next->nbr;
-	third = (*stack_a)->next->next->nbr;
-	if (first > second && first < third && third > second)
-		swap_a(stack_a);
-	if (first > second && first > third && second > third)
-	{
-		swap_a(stack_a);
-		reverse_rotate_a(stack_a);
-	}
-	if (first > second && first > third && second < third)
-		rotate_a(stack_a);
-	if (first < second && first < third && third < second)
-	{
-		swap_a(stack_a);
-		rotate_a(stack_a);
-	}
-	if (first < second && first > third && second > third)
-		reverse_rotate_a(stack_a);
-}
-
-void	sorting_switch(int argc, t_stack **stack_a)
+void	sorting_switch(int stack_size, t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp_1;
 
 	temp_1 = *stack_a;
-	if (argc == 3 && (temp_1->nbr > temp_1->next->nbr))
+	if (stack_size == 2 && (temp_1->nbr > temp_1->next->nbr))
 		swap_a(stack_a);
-	if (argc == 4)
+	if (stack_size == 3)
 		sort_three(stack_a);
+	if (stack_size == 4)
+		sort_four(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -58,7 +33,8 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	stack_a = process_input(argc, argv);
-	stack_b = process_input(argc, argv);
+	// stack_b = process_input(argc, argv);
+	stack_b = NULL;
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
 	if (!stack_a)
@@ -74,11 +50,10 @@ int	main(int argc, char **argv)
 	// build_index(stack_a);
 	ft_printf("List Size: %d", ft_lstsize(stack_a));
 	ft_printf("\nARGC: %d", argc);
-	ft_printf("\nARGV: %s", argv[0]);
+	ft_printf("\nARGV[0]: %s", argv[0]);
 	ft_printf("\n");
 
-	// sorting_switch(argc, &stack_a, &stack_b);
-	sorting_switch(argc, &stack_a);
+	sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
 
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
