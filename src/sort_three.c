@@ -6,13 +6,13 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 21:03:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/18 21:03:42 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/20 20:40:26 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_three(t_stack **stack_a)
+void	sort_three(t_stack **stack_a)
 {
 	int	first;
 	int	second;

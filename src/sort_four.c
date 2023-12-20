@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 21:03:13 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/20 20:35:23 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/20 20:41:35 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 static int	find_min_nbr(t_stack **stack)
 {
-	int		min;
-	t_stack	*list;
+	int		min_nbr;
+	t_stack	*temp_1;
 
-	list = *stack;
-	min = list->nbr;
-	while (list->next)
+	temp_1 = *stack;
+	min_nbr = temp_1->nbr;
+	while (temp_1->next)
 	{
-		if (list->next->nbr < min)
-			min = list->next->nbr;
+		if (temp_1->next->nbr < min_nbr)
+			min_nbr = temp_1->next->nbr;
 		else
-			list = list->next;
+			temp_1 = temp_1->next;
 	}
-	return (min);
+	return (min_nbr);
 }
 
 void	sort_four(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
+	int	min_nbr;
 
 	if (!(ft_is_list_sorted(*stack_a)))
 	{
-		min = find_min_nbr(stack_a);
-		while ((*stack_a)->nbr != min)
+		min_nbr = find_min_nbr(stack_a);
+		while ((*stack_a)->nbr != min_nbr)
 			reverse_rotate_a(stack_a);
 		push_b(stack_a, stack_b);
 		sort_three(stack_a);
