@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/18 21:16:38 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:26:38 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	ft_printlist(stack_b);
 	if (!stack_a)
 	{
-		write(2, "Error\n", 6);
+		ft_printf("Error\n");
 		exit(1);
 	}
 	if (ft_is_list_sorted(stack_a))
