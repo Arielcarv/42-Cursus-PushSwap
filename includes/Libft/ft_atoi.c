@@ -6,11 +6,17 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:18:17 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 17:53:41 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/24 00:20:44 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_error_exit(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
+}
 
 static int	ft_is_whitespace(char letter)
 {
@@ -55,11 +61,10 @@ int	ft_atoi(char const *str)
 	}
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
-		{
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+		if (!ft_isdigit(*str)
+			|| (signal == 1 && (number > (2147483647 - (*str - '0')) / 10))
+			|| (signal == -1 && (number < (-2147483648 + (*str - '0')) / 10)))
+			ft_error_exit();
 		number = (*str - '0') + (number * 10);
 		str++;
 	}

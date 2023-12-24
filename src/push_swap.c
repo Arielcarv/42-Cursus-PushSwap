@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/21 19:26:38 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/24 00:22:00 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	if (ft_is_list_sorted(stack_a))
-		printf("IT'S SORTED\n");
+		ft_printf("IT'S SORTED\n");
 	else
-		printf("NOT SORTED\n");
+		ft_printf("NOT SORTED\n");
 	// For radix needs to build an index with stack
 	// build_index(stack_a);
 	ft_printf("List Size: %d", ft_lstsize(stack_a));
