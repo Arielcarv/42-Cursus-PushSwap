@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 23:46:37 by arcarval          #+#    #+#             */
-/*   Updated: 2023/08/29 17:29:46 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/24 14:02:46 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_stack
 {
 	int				nbr;
 	int				index;
+	char			*bin;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;

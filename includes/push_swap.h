@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/21 19:27:52 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/24 15:11:13 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include "ft_printf/ft_printf.h"
 
 void	ft_printlist(t_stack *lst);
+void	ft_printlist_index(t_stack *stack_a);
 void	ft_free(int nbr);
 int		ft_is_list_sorted(t_stack *stack_a);
 t_stack	*process_input(int argc, char **argv);
+void	make_index(int argc, char **argv, t_stack **stack_a);
 
 void	swap_a(t_stack **stack_a);
 void	swap_b(t_stack **stack_a);
@@ -35,5 +37,6 @@ void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b);
 
 void	sort_three(t_stack **stack_a);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
+// void	sort_five(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/24 00:22:00 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/24 14:03:18 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	sorting_switch(int stack_size, t_stack **stack_a, t_stack **stack_b)
 		sort_three(stack_a);
 	if (stack_size == 4)
 		sort_four(stack_a, stack_b);
+	// if (stack_size == 5)
+	// 	sort_five(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -48,12 +50,15 @@ int	main(int argc, char **argv)
 		ft_printf("NOT SORTED\n");
 	// For radix needs to build an index with stack
 	// build_index(stack_a);
+	make_index(argc, argv, &stack_a);
+	ft_printlist_index(stack_a);
+	
 	ft_printf("List Size: %d", ft_lstsize(stack_a));
 	ft_printf("\nARGC: %d", argc);
 	ft_printf("\nARGV[0]: %s", argv[0]);
 	ft_printf("\n");
 
-	sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
+	// sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
 
 	ft_printlist(stack_a);
 	ft_printlist(stack_b);
