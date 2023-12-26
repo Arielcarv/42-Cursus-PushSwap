@@ -6,13 +6,13 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 21:03:13 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/20 20:41:35 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:30:39 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_min_nbr(t_stack **stack)
+int	find_min_nbr(t_stack **stack)
 {
 	int		min_nbr;
 	t_stack	*temp_1;
