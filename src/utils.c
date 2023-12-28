@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/27 21:32:22 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/28 07:33:28 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	ft_free(int nbr)
 	(void)nbr;
 }
 
-int find_min_nbr(t_stack **stack)
+int	find_min_nbr(t_stack **stack)
 {
-	int min_nbr;
-	t_stack *temp_1;
+	int		min_nbr;
+	t_stack	*temp_1;
 
 	temp_1 = *stack;
 	min_nbr = temp_1->nbr;
