@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/24 14:00:50 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/27 21:32:22 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,21 @@ void	ft_printlist_index(t_stack *lst)
 void	ft_free(int nbr)
 {
 	(void)nbr;
+}
+
+int find_min_nbr(t_stack **stack)
+{
+	int min_nbr;
+	t_stack *temp_1;
+
+	temp_1 = *stack;
+	min_nbr = temp_1->nbr;
+	while (temp_1->next)
+	{
+		if (temp_1->next->nbr < min_nbr)
+			min_nbr = temp_1->next->nbr;
+		else
+			temp_1 = temp_1->next;
+	}
+	return (min_nbr);
 }
