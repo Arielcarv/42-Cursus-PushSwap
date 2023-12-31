@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 18:25:08 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/29 17:36:07 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/30 23:36:33 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,26 @@
 
 void sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	// find min
-	// rotate if min is first 
-	// or 
-	// until min not found rotate a
+	int min;
+	t_stack *node;
+
+	node = *stack_a;
+	min = find_min_nbr(stack_a);
+	while (node->next)
+		node = node->next;
+	if (node->nbr == min)
+	{
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+		sort_four(stack_a, stack_b);
+		push_a(stack_b, stack_a);
+	}
+	else
+	{
+		while ((*stack_a)->nbr != min)
+			rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+		sort_four(stack_a, stack_b);
+		push_a(stack_b, stack_a);
+	}
 }
