@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 18:25:08 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/30 23:36:33 by arcarval         ###   ########.fr       */
+/*   Updated: 2023/12/30 23:38:14 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int min;
-	t_stack *node;
+	t_stack *temp_1;
 
-	node = *stack_a;
+	temp_1 = *stack_a;
 	min = find_min_nbr(stack_a);
-	while (node->next)
-		node = node->next;
-	if (node->nbr == min)
+	while (temp_1->next)
+		temp_1 = temp_1->next;
+	if (temp_1->nbr == min)
 	{
 		reverse_rotate_a(stack_a);
 		push_b(stack_a, stack_b);
