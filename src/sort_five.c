@@ -6,16 +6,16 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 18:25:08 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/30 23:38:14 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/01 16:39:17 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_five(t_stack **stack_a, t_stack **stack_b)
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
-	t_stack *temp_1;
+	int		min;
+	t_stack	*temp_1;
 
 	temp_1 = *stack_a;
 	min = find_min_nbr(stack_a);
