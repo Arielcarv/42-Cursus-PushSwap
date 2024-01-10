@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/28 07:33:28 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:18:19 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_printlist(t_stack *lst)
 
 void	ft_printlist_index(t_stack *lst)
 {
-	ft_printf("PRINT INDEX: ");
+	ft_printf("↓ PRINT INDEX ↓\n");
 	while (lst)
 	{
 		ft_printf("%d -> %d \n", lst->index, lst->nbr);

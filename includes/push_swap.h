@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/26 17:31:09 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:13:49 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_printlist_index(t_stack *stack_a);
 void	ft_free(int nbr);
 int		ft_is_list_sorted(t_stack *stack_a);
 t_stack	*process_input(int argc, char **argv);
-// void	make_index(int argc, char **argv, t_stack **stack_a);
+void	build_index(t_stack **stack_a);
 
 void	swap_a(t_stack **stack_a);
 void	swap_b(t_stack **stack_a);
