@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/12 09:52:35 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:22:25 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,17 @@ int	main(int argc, char **argv)
 
 	if (argc <= 1)
 		return (0);
-	stack_a = process_input(argc, argv);
 	stack_b = NULL;
+	stack_a = process_input(argc, argv);
 	if (!stack_a)
 	{
 		ft_printf("Error\n");
 		exit(1);
 	}
 	build_index(&stack_a);
-	sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
+	sorting_switch(argc - 1, &stack_a, &stack_b);
+	ft_printlist(stack_a);
+	ft_printlist(stack_b);
 	ft_lstclear(&stack_a, ft_free);
 	ft_lstclear(&stack_b, ft_free);
 	return (0);

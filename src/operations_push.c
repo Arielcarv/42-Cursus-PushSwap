@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_operations.c                                  :+:      :+:    :+:   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:50:21 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/07 19:06:35 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:25:10 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	push_a(t_stack **stack_b, t_stack **stack_a)
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
-	ft_printf("pa\n");
+	ft_printf("pb\n");
 }
