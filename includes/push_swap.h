@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/10 14:45:07 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/11 08:43:56 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		find_min_nbr(t_stack **stack);
 void	sort_three(t_stack **stack_a);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
+void	sort_radix(t_stack **stack_a, t_stack **stack_b);
 
 #endif

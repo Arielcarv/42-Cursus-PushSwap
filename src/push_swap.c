@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/10 14:44:28 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/12 09:52:35 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	sorting_switch(int stack_size, t_stack **stack_a, t_stack **stack_b)
 		sort_four(stack_a, stack_b);
 	if (stack_size == 5)
 		sort_five(stack_a, stack_b);
-	// if (stack_size > 5)
-	// 	sort_radix(stack_a, stack_b);
+	if (stack_size > 5)
+		sort_radix(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -37,29 +37,14 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	stack_a = process_input(argc, argv);
-	// stack_b = process_input(argc, argv);
 	stack_b = NULL;
-	// ft_printlist(stack_a);
-	// ft_printlist(stack_b);
 	if (!stack_a)
 	{
 		ft_printf("Error\n");
 		exit(1);
 	}
 	build_index(&stack_a);
-	// ft_printlist_index(stack_a);
-	
-	// ft_printf("List Size: %d", ft_lstsize(stack_a));
-	// ft_printf("\nARGC: %d", argc);
-	// ft_printf("\nARGV[0]: %s", argv[0]);
-	// ft_printf("\n");
-
 	sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
-
-	// ft_printlist(stack_a);
-	// ft_printlist(stack_b);
-
-	/* By the end of it all needs to clean stacks */
 	ft_lstclear(&stack_a, ft_free);
 	ft_lstclear(&stack_b, ft_free);
 	return (0);
