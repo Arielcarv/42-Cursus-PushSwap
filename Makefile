@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/11 08:44:17 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/12 13:02:32 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,18 @@ fclean:			clean
 				@make fclean -C $(INCLUDES_PATH)/Libft
 				@make fclean -C $(INCLUDES_PATH)/ft_printf
 				@echo "$(CYAN) PUSH_SWAP - Bath is so good!  Now it's over. 🧼✨$(RESET)"
+
+test5:
+				@ARG=$$(python3 -c "import random; print(' '.join(map(str, random.sample(range(5), 5))) )"); \
+				./push_swap $$ARG | wc -l
+
+test100:
+				@ARG=$$(python3 -c "import random; print(' '.join(map(str, random.sample(range(100), 100))) )"); \
+				./push_swap $$ARG | wc -l
+
+test500:
+				@ARG=$$(python3 -c "import random; print(' '.join(map(str, random.sample(range(500), 500))) )"); \
+				./push_swap $$ARG | wc -l
 
 norm:
 				norminette -R CheckForbiddenSourceHeader $(addprefix $(SRC_PATH), $(PUSH_SWAP_SRCS)) $(INCLUDES_PATH)$(HEADER) $(INCLUDES_PATH)Libft/*.c  $(INCLUDES_PATH)Libft/*.h  $(INCLUDES_PATH)ft_printf/*.c  $(INCLUDES_PATH)ft_printf/*.h
