@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/10 12:18:19 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/13 11:48:45 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ int	find_min_nbr(t_stack **stack)
 	{
 		if (temp_1->next->nbr < min_nbr)
 			min_nbr = temp_1->next->nbr;
-		else
-			temp_1 = temp_1->next;
+		temp_1 = temp_1->next;
 	}
 	return (min_nbr);
 }
