@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/12 12:51:25 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:11:45 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	main(int argc, char **argv)
 
 	if (argc <= 1)
 		return (0);
-	stack_b = NULL;
 	stack_a = process_input(argc, argv);
+	stack_b = NULL;
 	if (!stack_a)
 	{
 		ft_printf("Error\n");
