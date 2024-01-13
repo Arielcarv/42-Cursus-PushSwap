@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/13 13:11:45 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/13 17:03:07 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,12 @@ int	main(int argc, char **argv)
 		ft_printf("Error\n");
 		exit(1);
 	}
-	build_index(&stack_a);
-	sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
-	ft_lstclear(&stack_a, ft_free);
-	ft_lstclear(&stack_b, ft_free);
+	if (!ft_is_list_sorted(stack_a))
+	{
+		build_index(&stack_a);
+		sorting_switch(ft_lstsize(stack_a), &stack_a, &stack_b);
+		ft_lstclear(&stack_a, ft_free);
+		ft_lstclear(&stack_b, ft_free);
+	}
 	return (0);
 }
