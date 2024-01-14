@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:18:17 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/24 00:20:44 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/14 16:41:19 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error_exit(void)
 {
-	write(1, "Error\n", 6);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 

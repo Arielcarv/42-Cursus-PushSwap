@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/12 13:02:32 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/14 16:55:48 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ CFLAGS				=	-Wall -Wextra -Werror
 
 PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
 						operations_rotate.c	operations_reverse_rotate.c \
-						input_validations.c	utils.c			index.c \
+						input_validations.c	utils.c			build_index.c \
 						sort_three.c		sort_four.c		sort_five.c sort_radix.c
 
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
