@@ -2,4 +2,4 @@
 *.a
 push_swap
 *visualizer*
-checker*
+checker

@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/14 16:55:48 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/18 12:42:14 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,19 @@ YELLOW				=	\033[0;33m
 
 # PUSH_SWAP
 NAME				=	push_swap
+NAME_BONUS			=	checker
 HEADER				=	push_swap.h
 INCLUDES_PATH		=	includes/
 SRC_PATH			=	src/
 OBJ_PATH			=	obj/
+BONUS_PATH			=	bonus/
+OBJ_BONUS_PATH		=	bonus/obj/
 LIBFT				=	$(INCLUDES_PATH)Libft/
 FT_PRINTF			=	$(INCLUDES_PATH)ft_printf/
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror
+AR					=	ar -rcs
+RM					=	rm -rf
 
 PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
 						operations_rotate.c	operations_reverse_rotate.c \
@@ -39,12 +44,19 @@ PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
 						sort_three.c		sort_four.c		sort_five.c sort_radix.c
 
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
+
+PUSH_SWAP_BONUS_SRCS=	checker.c	get_next_line_utils.c	get_next_line.c \
+						operations_swap.c	operations_push.c \
+						operations_rotate.c	operations_reverse_rotate.c \
+						input_validations.c	utils.c
+
+PUSH_SWAP_BONUS_OBJS=	$(addprefix $(OBJ_BONUS_PATH), $(PUSH_SWAP_BONUS_SRCS:.c=.o))
+
 INCLUDES			=	-I $(INCLUDES_PATH)
 
-AR					=	ar -rcs
-RM					=	rm -rf
-
 all:			$(OBJ_PATH) $(NAME)
+
+bonus:			$(OBJ_BONUS_PATH) $(NAME_BONUS)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
@@ -53,25 +65,43 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 $(OBJ_PATH):
 				@mkdir $(OBJ_PATH)
 
+$(OBJ_BONUS_PATH)%.o: $(BONUS_PATH)%.c
+				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
+				@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_BONUS_PATH)%.o: $(SRC_PATH)%.c
+				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
+				@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_BONUS_PATH):
+				@mkdir $(OBJ_BONUS_PATH)
+
 $(NAME):		libft printf $(PUSH_SWAP_OBJS)
-				$(CC) $(PUSH_SWAP_OBJS) -L$(LIBFT) -lft -L$(FT_PRINTF) -lftprintf -o $(NAME)
+				@$(CC) $(PUSH_SWAP_OBJS) -L$(LIBFT) -lft -L$(FT_PRINTF) -lftprintf -o $(NAME)
 				@echo "$(CYAN) PUSH_SWAP - I'm ready to work! 🧠$(RESET)"
 
+$(NAME_BONUS):	libft printf $(PUSH_SWAP_BONUS_OBJS)
+				@$(CC) $(PUSH_SWAP_BONUS_OBJS) -L$(LIBFT) -lft -L$(FT_PRINTF) -lftprintf -o $(NAME_BONUS)
+				@echo "$(CYAN) CHECKER - I'm ready to work! 🧠$(RESET)"
+
 libft:
-				@make bonus -C $(LIBFT)
+				@make --no-print-directory bonus -C $(LIBFT)
 
 printf:
-				@make -C $(FT_PRINTF)
+				@make --no-print-directory -C $(FT_PRINTF) > /dev/null
 
 clean:
 				@$(RM) $(PUSH_SWAP_OBJS)
 				@$(RM) $(OBJ_PATH)
+				@$(RM) $(PUSH_SWAP_BONUS_OBJS)
+				@$(RM) $(OBJ_BONUS_PATH)
 				@echo "$(CYAN) FRACTOL - Bye Laziness, Bye dirt 🚿$(RESET)"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@make fclean -C $(INCLUDES_PATH)/Libft
-				@make fclean -C $(INCLUDES_PATH)/ft_printf
+				@$(RM) $(NAME_BONUS)
+				@make --no-print-directory fclean -C $(INCLUDES_PATH)/Libft
+				@make --no-print-directory fclean -C $(INCLUDES_PATH)/ft_printf
 				@echo "$(CYAN) PUSH_SWAP - Bath is so good!  Now it's over. 🧼✨$(RESET)"
 
 test5:
@@ -91,4 +121,4 @@ norm:
 
 re:				fclean all
 
-.PHONY:	all $(NAME) libft printf bonus clean fclean re
+.PHONY:	all $(NAME) $(NAME_BONUS) libft printf bonus clean fclean re

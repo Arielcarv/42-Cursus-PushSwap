@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/14 16:40:37 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 10:41:20 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (argc <= 1)
+	if (argc <= 1 || (argc == 2 && !argv[1][0]))
 		return (0);
 	stack_a = process_input(argc, argv);
 	stack_b = NULL;

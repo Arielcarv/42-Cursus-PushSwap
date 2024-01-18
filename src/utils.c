@@ -6,30 +6,30 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/13 11:48:45 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 10:44:19 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_printlist(t_stack *lst)
+void	ft_printlist(t_stack *stack)
 {
 	ft_printf("PRINT LIST: ");
-	while (lst)
+	while (stack)
 	{
-		ft_printf("%d ", lst->nbr);
-		lst = lst->next;
+		ft_printf("%d ", stack->nbr);
+		stack = stack->next;
 	}
 	ft_printf("\n");
 }
 
-void	ft_printlist_index(t_stack *lst)
+void	ft_printlist_index(t_stack *stack)
 {
 	ft_printf("↓ PRINT INDEX ↓\n");
-	while (lst)
+	while (stack)
 	{
-		ft_printf("%d -> %d \n", lst->index, lst->nbr);
-		lst = lst->next;
+		ft_printf("%d -> %d \n", stack->index, stack->nbr);
+		stack = stack->next;
 	}
 	ft_printf("\n");
 }
