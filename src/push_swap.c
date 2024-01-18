@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:20:03 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 10:41:20 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:08:39 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sorting_switch(int stack_size, t_stack **stack_a, t_stack **stack_b)
 
 	temp_1 = *stack_a;
 	if (stack_size == 2 && (temp_1->nbr > temp_1->next->nbr))
-		swap_a(stack_a);
+		swap_a(stack_a, 1);
 	if (stack_size == 3)
 		sort_three(stack_a);
 	if (stack_size == 4)

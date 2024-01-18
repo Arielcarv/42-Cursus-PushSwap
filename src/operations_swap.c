@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_operations.c                                  :+:      :+:    :+:   */
+/*   operations_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:19:27 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/07 19:06:33 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:02:33 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ void	swap(t_stack **stack)
 	*stack = temp_2;
 }
 
-void	swap_a(t_stack **stack_a)
+void	swap_a(t_stack **stack_a, int print)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	if (print)
+		ft_printf("sa\n");
 }
 
-void	swap_b(t_stack **stack_b)
+void	swap_b(t_stack **stack_b, int print)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	if (print)
+		ft_printf("sb\n");
 }
 
-void	swap_ss(t_stack **stack_a, t_stack **stack_b)
+void	swap_ss(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	if (print)
+		ft_printf("ss\n");
 }

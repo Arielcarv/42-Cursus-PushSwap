@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 18:25:08 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/01 16:39:17 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:10:28 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		temp_1 = temp_1->next;
 	if (temp_1->nbr == min)
 	{
-		reverse_rotate_a(stack_a);
-		push_b(stack_a, stack_b);
+		reverse_rotate_a(stack_a, 1);
+		push_b(stack_a, stack_b, 1);
 		sort_four(stack_a, stack_b);
-		push_a(stack_b, stack_a);
+		push_a(stack_b, stack_a, 1);
 	}
 	else
 	{
 		while ((*stack_a)->nbr != min)
-			rotate_a(stack_a);
-		push_b(stack_a, stack_b);
+			rotate_a(stack_a, 1);
+		push_b(stack_a, stack_b, 1);
 		sort_four(stack_a, stack_b);
-		push_a(stack_b, stack_a);
+		push_a(stack_b, stack_a, 1);
 	}
 }

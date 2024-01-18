@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 12:19:10 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:06:22 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,19 @@ char	*ft_strjoin_gnl(char *str1, char *str2);
 
 void	ft_printlist(t_stack *lst);
 void	ft_free(int nbr);
+int		ft_is_list_sorted(t_stack *stack_a);
 
 t_stack	*process_input(int argc, char **argv);
+void	swap_a(t_stack **stack_a, int print);
+void	swap_b(t_stack **stack_a, int print);
+void	swap_ss(t_stack **stack_a, t_stack **stack_b, int print);
+void	push_a(t_stack **stack_b, t_stack **stack_a, int print);
+void	push_b(t_stack **stack_a, t_stack **stack_b, int print);
+void	rotate_a(t_stack **stack_a, int print);
+void	rotate_b(t_stack **stack_b, int print);
+void	rotate_rr(t_stack **stack_a, t_stack **stack_b, int print);
+void	reverse_rotate_a(t_stack **stack_a, int print);
+void	reverse_rotate_b(t_stack **stack_b, int print);
+void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b, int print);
 
 #endif

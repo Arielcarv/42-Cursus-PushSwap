@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/18 12:42:14 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/18 16:18:34 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,7 +117,15 @@ test500:
 				./push_swap $$ARG | wc -l
 
 norm:
-				norminette -R CheckForbiddenSourceHeader $(addprefix $(SRC_PATH), $(PUSH_SWAP_SRCS)) $(INCLUDES_PATH)$(HEADER) $(INCLUDES_PATH)Libft/*.c  $(INCLUDES_PATH)Libft/*.h  $(INCLUDES_PATH)ft_printf/*.c  $(INCLUDES_PATH)ft_printf/*.h
+				@norminette -R CheckForbiddenSourceHeader \
+					$(addprefix $(SRC_PATH), $(PUSH_SWAP_SRCS)) \
+					$(addprefix $(BONUS_PATH), *.c) \
+					$(INCLUDES_PATH)$(HEADER) \
+					$(INCLUDES_PATH)Libft/*.c \
+					$(INCLUDES_PATH)Libft/*.h \
+					$(INCLUDES_PATH)ft_printf/*.c \
+					$(INCLUDES_PATH)ft_printf/*.h
+					
 
 re:				fclean all
 

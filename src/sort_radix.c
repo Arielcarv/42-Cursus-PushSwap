@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:05:39 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/11 08:48:28 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:10:44 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	sort_radix(t_stack **stack_a, t_stack **stack_b)
 		while (stack_size)
 		{
 			if ((*stack_a)->index & (1 << bin))
-				rotate_a(stack_a);
+				rotate_a(stack_a, 1);
 			else
-				push_b(stack_a, stack_b);
+				push_b(stack_a, stack_b, 1);
 			stack_size--;
 		}
 		bin++;
 		while (*stack_b)
-			push_a(stack_b, stack_a);
+			push_a(stack_b, stack_a, 1);
 	}
 }

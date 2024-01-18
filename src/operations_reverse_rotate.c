@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_operations.c                        :+:      :+:    :+:   */
+/*   operations_reverse_rotate.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 08:34:21 by arcarval          #+#    #+#             */
-/*   Updated: 2023/12/16 14:18:26 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:05:04 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,24 @@ void	reverse_rotate(t_stack **stack)
 	*stack = temp_2;
 }
 
-void	reverse_rotate_a(t_stack **stack_a)
+void	reverse_rotate_a(t_stack **stack_a, int print)
 {
 	reverse_rotate(stack_a);
-	ft_printf("rra\n");
+	if (print)
+		ft_printf("rra\n");
 }
 
-void	reverse_rotate_b(t_stack **stack_b)
+void	reverse_rotate_b(t_stack **stack_b, int print)
 {
 	reverse_rotate(stack_b);
-	ft_printf("rrb\n");
+	if (print)
+		ft_printf("rrb\n");
 }
 
-void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b)
+void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_printf("rrr\n");
+	if (print)
+		ft_printf("rrr\n");
 }

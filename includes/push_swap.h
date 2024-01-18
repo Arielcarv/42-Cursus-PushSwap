@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/11 08:43:56 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:07:10 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int		ft_is_list_sorted(t_stack *stack_a);
 void	build_index(t_stack **stack_a);
 t_stack	*process_input(int argc, char **argv);
 
-void	swap_a(t_stack **stack_a);
-void	swap_b(t_stack **stack_a);
-void	swap_ss(t_stack **stack_a, t_stack **stack_b);
-void	push_a(t_stack **stack_b, t_stack **stack_a);
-void	push_b(t_stack **stack_a, t_stack **stack_b);
-void	rotate_a(t_stack **stack_a);
-void	rotate_b(t_stack **stack_b);
-void	rotate_rr(t_stack **stack_a, t_stack **stack_b);
-void	reverse_rotate_a(t_stack **stack_a);
-void	reverse_rotate_b(t_stack **stack_b);
-void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b);
+void	swap_a(t_stack **stack_a, int print);
+void	swap_b(t_stack **stack_a, int print);
+void	swap_ss(t_stack **stack_a, t_stack **stack_b, int print);
+void	push_a(t_stack **stack_b, t_stack **stack_a, int print);
+void	push_b(t_stack **stack_a, t_stack **stack_b, int print);
+void	rotate_a(t_stack **stack_a, int print);
+void	rotate_b(t_stack **stack_b, int print);
+void	rotate_rr(t_stack **stack_a, t_stack **stack_b, int print);
+void	reverse_rotate_a(t_stack **stack_a, int print);
+void	reverse_rotate_b(t_stack **stack_b, int print);
+void	reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b, int print);
 
 int		find_min_nbr(t_stack **stack);
 

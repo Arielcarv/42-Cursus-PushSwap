@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:50:21 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/12 12:25:10 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:02:07 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ void	push(t_stack **stack1, t_stack **stack2)
 	*stack2 = temp_1;
 }
 
-void	push_a(t_stack **stack_b, t_stack **stack_a)
+void	push_a(t_stack **stack_b, t_stack **stack_a, int print)
 {
 	push(stack_b, stack_a);
-	ft_printf("pa\n");
+	if (print)
+		ft_printf("pa\n");
 }
 
-void	push_b(t_stack **stack_a, t_stack **stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	push(stack_a, stack_b);
-	ft_printf("pb\n");
+	if (print)
+		ft_printf("pb\n");
 }
