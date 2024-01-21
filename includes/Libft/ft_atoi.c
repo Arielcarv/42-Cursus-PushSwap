@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:18:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/14 16:41:19 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:41:44 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,9 @@ int	ft_atoi(char const *str)
 			signal *= -1;
 		str++;
 	}
-	while (*str)
+	while (ft_isdigit(*str))
 	{
-		if (!ft_isdigit(*str)
-			|| (signal == 1 && (number > (2147483647 - (*str - '0')) / 10))
+		if ((signal == 1 && (number > (2147483647 - (*str - '0')) / 10))
 			|| (signal == -1 && (number < (-2147483648 + (*str - '0')) / 10)))
 			ft_error_exit();
 		number = (*str - '0') + (number * 10);

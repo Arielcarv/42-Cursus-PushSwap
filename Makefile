@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/18 16:18:34 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/21 17:52:56 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,14 @@ NAME_BONUS			=	checker
 HEADER				=	push_swap.h
 INCLUDES_PATH		=	includes/
 SRC_PATH			=	src/
-OBJ_PATH			=	obj/
 BONUS_PATH			=	bonus/
+OBJ_PATH			=	obj/
 OBJ_BONUS_PATH		=	bonus/obj/
 LIBFT				=	$(INCLUDES_PATH)Libft/
 FT_PRINTF			=	$(INCLUDES_PATH)ft_printf/
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror
+INCLUDES			=	-I $(INCLUDES_PATH)
 AR					=	ar -rcs
 RM					=	rm -rf
 
@@ -52,29 +53,25 @@ PUSH_SWAP_BONUS_SRCS=	checker.c	get_next_line_utils.c	get_next_line.c \
 
 PUSH_SWAP_BONUS_OBJS=	$(addprefix $(OBJ_BONUS_PATH), $(PUSH_SWAP_BONUS_SRCS:.c=.o))
 
-INCLUDES			=	-I $(INCLUDES_PATH)
 
-all:			$(OBJ_PATH) $(NAME)
+all:			$(NAME)
 
-bonus:			$(OBJ_BONUS_PATH) $(NAME_BONUS)
+bonus:			$(NAME_BONUS)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(OBJ_PATH)
 				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
 				@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJ_PATH):
-				@mkdir $(OBJ_PATH)
-
 $(OBJ_BONUS_PATH)%.o: $(BONUS_PATH)%.c
+				@mkdir -p $(OBJ_BONUS_PATH)
 				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
 				@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_BONUS_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(OBJ_BONUS_PATH)
 				@echo "$(ORANGE) Compiling  ➟  $(BLUE)$< $(WHITE)"
 				@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(OBJ_BONUS_PATH):
-				@mkdir $(OBJ_BONUS_PATH)
 
 $(NAME):		libft printf $(PUSH_SWAP_OBJS)
 				@$(CC) $(PUSH_SWAP_OBJS) -L$(LIBFT) -lft -L$(FT_PRINTF) -lftprintf -o $(NAME)
