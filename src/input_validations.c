@@ -6,11 +6,18 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:14:05 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 16:10:04 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:09:00 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static char	**ft_split_or_not(int argc, char **argv)
+{
+	if (argc == 2)
+		return (ft_split(argv[1], ' '));
+	return (argv);
+}
 
 static int	ft_check_duplicate(t_stack *stack_a)
 {
@@ -30,41 +37,6 @@ static int	ft_check_duplicate(t_stack *stack_a)
 	return (0);
 }
 
-static char	**ft_split_or_not(int argc, char **argv)
-{
-	if (argc == 2)
-		return (ft_split(argv[1], ' '));
-	return (argv);
-}
-
-t_stack	*process_input(int argc, char **argv)
-{
-	int		i;
-	int		current_number;
-	char	**input_stack;
-	t_stack	*new_input_stack;
-
-	i = 1;
-	if (argc == 2)
-		i = 0;
-	input_stack = ft_split_or_not(argc, argv);
-	new_input_stack = NULL;
-	while (input_stack[i])
-	{
-		if (!ft_strncmp(input_stack[i], "-", 2)
-			|| !ft_strncmp(input_stack[i], "+", 2))
-			return (NULL);
-		if (!input_stack[i][0])
-			return (NULL);
-		current_number = ft_atoi(input_stack[i]);
-		ft_lstadd_back(&new_input_stack, ft_lstnew(current_number));
-		i++;
-	}
-	if (ft_check_duplicate(new_input_stack))
-		return (NULL);
-	return (new_input_stack);
-}
-
 int	ft_is_list_sorted(t_stack *stack_a)
 {
 	int	current_nbr;
@@ -78,4 +50,32 @@ int	ft_is_list_sorted(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
+}
+
+t_stack	*process_input(int argc, char **argv)
+{
+	int		i;
+	char	**input_stack;
+	t_stack	*new_input_stack;
+
+	i = 0;
+	if (argc == 2)
+		i = -1;
+	input_stack = ft_split_or_not(argc, argv);
+	new_input_stack = NULL;
+	while (input_stack[++i])
+	{
+		if (!ft_strncmp(input_stack[i], "-", 2)
+			|| !ft_strncmp(input_stack[i], "+", 2))
+			ft_exit(new_input_stack);
+		if (!input_stack[i][0])
+			ft_exit(new_input_stack);
+		ft_lstadd_back(&new_input_stack, ft_lstnew(ft_atoi(input_stack[i])));
+	}
+	if (ft_check_duplicate(new_input_stack)
+		|| ft_is_list_sorted(new_input_stack))
+		ft_exit(new_input_stack);
+	if (argc == 2)
+		free_substrings(input_stack);
+	return (new_input_stack);
 }
