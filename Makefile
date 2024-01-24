@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/21 17:52:56 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/24 14:57:35 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,6 +92,8 @@ clean:
 				@$(RM) $(OBJ_PATH)
 				@$(RM) $(PUSH_SWAP_BONUS_OBJS)
 				@$(RM) $(OBJ_BONUS_PATH)
+				@make --no-print-directory clean -C $(INCLUDES_PATH)/Libft
+				@make --no-print-directory clean -C $(INCLUDES_PATH)/ft_printf
 				@echo "$(CYAN) FRACTOL - Bye Laziness, Bye dirt 🚿$(RESET)"
 
 fclean:			clean
