@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/21 16:14:04 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:36:31 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,4 @@ void	free_substrings(char **stack)
 		index++;
 	}
 	free(stack);
-}
-
-void	ft_exit(t_stack *stack_a)
-{
-	ft_putstr_fd("Error\n", 2);
-	ft_lstclear(&stack_a, ft_free);
-	exit(1);
 }

@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/24 14:57:35 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/24 18:38:34 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,8 @@ RM					=	rm -rf
 
 PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
 						operations_rotate.c	operations_reverse_rotate.c \
-						input_validations.c	utils.c			build_index.c \
-						sort_three.c		sort_four.c		sort_five.c sort_radix.c
+						input_validations.c	utils.c			build_index.c	utils_exit.c \
+						sort_three.c		sort_four.c		sort_five.c		sort_radix.c
 
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
 
@@ -94,7 +94,7 @@ clean:
 				@$(RM) $(OBJ_BONUS_PATH)
 				@make --no-print-directory clean -C $(INCLUDES_PATH)/Libft
 				@make --no-print-directory clean -C $(INCLUDES_PATH)/ft_printf
-				@echo "$(CYAN) FRACTOL - Bye Laziness, Bye dirt 🚿$(RESET)"
+				@echo "$(CYAN) PUSH_SWAP - Bye Laziness, Bye dirt 🚿$(RESET)"
 
 fclean:			clean
 				@$(RM) $(NAME)
