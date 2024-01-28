@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/27 21:03:36 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 22:12:45 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_printlist(t_stack *lst);
 void	ft_free(int nbr);
 void	ft_exit(t_stack *stack_a);
 void	ft_exit_sorted(t_stack *stack_a);
+void	free_substrings(char **stack);
 int		ft_is_list_sorted(t_stack *stack_a);
 
 t_stack	*process_input(int argc, char **argv);
