@@ -6,22 +6,22 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:50:25 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/27 22:10:30 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 22:39:49 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static char **ft_split_or_not(int argc, char **argv)
+static char	**ft_split_or_not(int argc, char **argv)
 {
 	if (argc == 2)
 		return (ft_split(argv[1], ' '));
 	return (argv);
 }
 
-static int ft_check_duplicate(t_stack *stack_a)
+static int	ft_check_duplicate(t_stack *stack_a)
 {
-	t_stack *next_nbr;
+	t_stack	*next_nbr;
 
 	while (stack_a)
 	{
@@ -37,9 +37,9 @@ static int ft_check_duplicate(t_stack *stack_a)
 	return (0);
 }
 
-int ft_is_list_sorted(t_stack *stack_a)
+int	ft_is_list_sorted(t_stack *stack_a)
 {
-	int current_nbr;
+	int	current_nbr;
 
 	current_nbr = stack_a->nbr;
 	while (stack_a)
@@ -52,11 +52,11 @@ int ft_is_list_sorted(t_stack *stack_a)
 	return (1);
 }
 
-t_stack *process_input(int argc, char **argv)
+t_stack	*process_input(int argc, char **argv)
 {
-	int i;
-	char **input_stack;
-	t_stack *new_input_stack;
+	int		i;
+	char	**input_stack;
+	t_stack	*new_input_stack;
 
 	i = 0;
 	if (argc == 2)
@@ -65,7 +65,8 @@ t_stack *process_input(int argc, char **argv)
 	new_input_stack = NULL;
 	while (input_stack[++i])
 	{
-		if (!ft_strncmp(input_stack[i], "-", 2) || !ft_strncmp(input_stack[i], "+", 2))
+		if (!ft_strncmp(input_stack[i], "-", 2)
+			|| !ft_strncmp(input_stack[i], "+", 2))
 			ft_exit(new_input_stack);
 		if (!input_stack[i][0])
 			ft_exit(new_input_stack);
