@@ -6,11 +6,11 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 15:37:49 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 17:11:58 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:04:16 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker.h"
 
 void	error_input(t_stack **stack_a, t_stack **stack_b, char *line)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 17:06:22 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:03:36 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strjoin_gnl(char *str1, char *str2);
 
 void	ft_printlist(t_stack *lst);
 void	ft_free(int nbr);
+void	ft_exit(t_stack *stack_a);
+void	ft_exit_sorted(t_stack *stack_a);
 int		ft_is_list_sorted(t_stack *stack_a);
 
 t_stack	*process_input(int argc, char **argv);

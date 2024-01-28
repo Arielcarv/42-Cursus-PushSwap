@@ -6,11 +6,11 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:13:50 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 10:55:57 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:02:35 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker.h"
 
 void	*ft_calloc_gnl(size_t number_spaces, size_t size)
 {

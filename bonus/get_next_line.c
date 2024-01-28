@@ -6,11 +6,11 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:09 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/18 16:24:17 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:02:41 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker.h"
 
 static int	size_or_linebreak(char const *static_buffer)
 {
