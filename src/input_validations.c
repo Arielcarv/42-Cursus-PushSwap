@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:14:05 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/30 19:00:40 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:07:37 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	**ft_split_or_not(int argc, char **argv)
 			size++;
 		if (size == 1)
 			ft_exit_unitary(input_stack);
-		return input_stack;
+		return (input_stack);
 	}
 	return (argv);
 }

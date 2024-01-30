@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/30 19:06:23 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:09:01 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_is_list_sorted(t_stack *stack_a);
 void	build_index(t_stack **stack_a);
 void	ft_exit(t_stack *stack_a);
 void	ft_exit_sorted(t_stack *stack_a);
-void	ft_exit_unitary(char **stack_a);
+void	ft_exit_unitary(char **stack);
 void	free_substrings(char **stack);
 t_stack	*process_input(int argc, char **argv);
 
