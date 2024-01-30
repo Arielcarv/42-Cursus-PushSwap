@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/01/27 21:10:07 by arcarval         ###   ########.fr        #
+#    Updated: 2024/01/30 15:48:49 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ YELLOW				=	\033[0;33m
 NAME				=	push_swap
 NAME_BONUS			=	checker
 HEADER				=	push_swap.h
+HEADER_BONUS		=	checker.h
 INCLUDES_PATH		=	includes/
 SRC_PATH			=	src/
 BONUS_PATH			=	bonus/
@@ -120,6 +121,7 @@ norm:
 					$(addprefix $(SRC_PATH), $(PUSH_SWAP_SRCS)) \
 					$(addprefix $(BONUS_PATH), *.c) \
 					$(INCLUDES_PATH)$(HEADER) \
+					$(BONUS_PATH)$(HEADER_BONUS) \
 					$(INCLUDES_PATH)Libft/*.c \
 					$(INCLUDES_PATH)Libft/*.h \
 					$(INCLUDES_PATH)ft_printf/*.c \

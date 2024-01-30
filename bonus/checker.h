@@ -6,12 +6,12 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/01/27 22:12:45 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:46:34 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
