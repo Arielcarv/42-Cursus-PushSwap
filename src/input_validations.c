@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:14:05 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/01 16:48:40 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:10:31 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	**ft_split_or_not(int argc, char **argv)
 		{
 			if (ft_atoi(*input_stack) == 0
 				&& !ft_isdigit(*input_stack[0]))
-				ft_printf("Error\n");
+				ft_putstr_fd("Error\n", 2);
 			ft_exit_unitary(input_stack);
 		}
 		return (input_stack);
@@ -68,6 +68,15 @@ int	ft_is_list_sorted(t_stack *stack_a)
 	return (1);
 }
 
+static void	input_checks(int i, char **input_stack, t_stack *new_stack)
+{
+	if (!ft_strncmp(input_stack[i], "-", 2)
+		|| !ft_strncmp(input_stack[i], "+", 2))
+		ft_exit_error(input_stack, new_stack);
+	if (!input_stack[i][0])
+		ft_exit(new_stack);
+}
+
 t_stack	*process_input(int argc, char **argv)
 {
 	int		i;
@@ -81,12 +90,10 @@ t_stack	*process_input(int argc, char **argv)
 	new_input_stack = NULL;
 	while (input_stack[++i])
 	{
-		if (!ft_strncmp(input_stack[i], "-", 2)
-			|| !ft_strncmp(input_stack[i], "+", 2))
-			ft_exit(new_input_stack);
-		if (!input_stack[i][0])
-			ft_exit(new_input_stack);
-		ft_lstadd_back(&new_input_stack, ft_lstnew(ft_atoi(input_stack[i])));
+		input_checks(i, input_stack, new_input_stack);
+		ft_lstadd_back(&new_input_stack,
+			ft_lstnew(
+				ft_atoi_push(input_stack[i], input_stack, new_input_stack)));
 	}
 	if (ft_check_duplicate(new_input_stack))
 		ft_exit(new_input_stack);
