@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/02/02 16:52:48 by arcarval         ###   ########.fr        #
+#    Updated: 2024/02/09 19:49:23 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,16 +41,17 @@ AR					=	ar -rcs
 RM					=	rm -rf
 
 PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
-						operations_rotate.c	operations_reverse_rotate.c 	ft_atoi_push.c \
-						input_validations.c	utils.c			build_index.c	utils_exit.c \
-						sort_three.c		sort_four.c		sort_five.c		sort_radix.c
+						build_index.c		operations_rotate.c	operations_reverse_rotate.c\
+						input_validations.c	ft_atoi_push.c \
+						utils.c				utils_exit.c		utils_input.c \
+						sort_three.c		sort_four.c			sort_five.c		sort_radix.c
 
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
 
 PUSH_SWAP_BONUS_SRCS=	checker.c	get_next_line_utils.c	get_next_line.c \
 						operations_swap.c	operations_push.c \
 						operations_rotate.c	operations_reverse_rotate.c \
-						input_validations.c	utils.c			utils_exit.c
+						input_validations.c	utils.c			utils_exit.c	utils_input.c
 
 PUSH_SWAP_BONUS_OBJS=	$(addprefix $(OBJ_BONUS_PATH), $(PUSH_SWAP_BONUS_SRCS:.c=.o))
 

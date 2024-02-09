@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:50:25 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/01 16:49:01 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:20:53 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,39 +33,6 @@ static char	**ft_split_or_not(int argc, char **argv)
 		return (input_stack);
 	}
 	return (argv);
-}
-
-static int	ft_check_duplicate(t_stack *stack_a)
-{
-	t_stack	*next_nbr;
-
-	while (stack_a)
-	{
-		next_nbr = stack_a->next;
-		while (next_nbr)
-		{
-			if (stack_a->nbr == next_nbr->nbr)
-				return (1);
-			next_nbr = next_nbr->next;
-		}
-		stack_a = stack_a->next;
-	}
-	return (0);
-}
-
-int	ft_is_list_sorted(t_stack *stack_a)
-{
-	int	current_nbr;
-
-	current_nbr = stack_a->nbr;
-	while (stack_a)
-	{
-		if (current_nbr > stack_a->nbr)
-			return (0);
-		current_nbr = stack_a->nbr;
-		stack_a = stack_a->next;
-	}
-	return (1);
 }
 
 t_stack	*process_input(int argc, char **argv)

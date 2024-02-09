@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:54:23 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/09 15:51:07 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:19:16 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,4 @@ void	free_substrings(char **stack)
 		index++;
 	}
 	free(stack);
-}
-
-int	ft_is_list_sorted(t_stack *stack_a)
-{
-	int	current_nbr;
-
-	current_nbr = stack_a->nbr;
-	while (stack_a)
-	{
-		if (current_nbr > stack_a->nbr)
-			return (0);
-		current_nbr = stack_a->nbr;
-		stack_a = stack_a->next;
-	}
-	return (1);
 }

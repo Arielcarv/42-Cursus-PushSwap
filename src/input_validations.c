@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:14:05 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/09 17:08:44 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:21:13 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,6 @@ static char	**ft_split_or_not(int argc, char **argv)
 		return (input_stack);
 	}
 	return (argv);
-}
-
-static int	ft_check_duplicate(t_stack *stack_a)
-{
-	t_stack	*next_nbr;
-
-	while (stack_a)
-	{
-		next_nbr = stack_a->next;
-		while (next_nbr)
-		{
-			if (stack_a->nbr == next_nbr->nbr)
-				return (1);
-			next_nbr = next_nbr->next;
-		}
-		stack_a = stack_a->next;
-	}
-	return (0);
 }
 
 static void	input_checks(int argc, int i,
