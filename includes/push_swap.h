@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:03:01 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/02 17:09:14 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:17:46 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ void	ft_exit(t_stack *stack_a);
 void	ft_exit_error(char **input_stack, t_stack *new_input_stack);
 void	ft_exit_sorted(t_stack *stack_a);
 void	ft_exit_unitary(char **stack);
+void	get_out(int argc, char **input_stack, t_stack *new_input_stack);
 void	free_substrings(char **stack);
-int		ft_atoi_push(char const *str, char **input_stack, t_stack *new_stack);
+int		ft_is_sign(char letter);
+int		ft_atoi_push(int argc, char const *str,
+			char **input_stack, t_stack *new_stack);
 t_stack	*process_input(int argc, char **argv);
 
 void	swap_a(t_stack **stack_a, int print);

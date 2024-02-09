@@ -2,4 +2,5 @@
 *.a
 push_swap
 *visualizer*
+*tester
 checker

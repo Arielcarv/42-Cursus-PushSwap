@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:34:41 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/02 17:10:46 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:18:53 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,12 @@ void	ft_exit_unitary(char **input_stack)
 {
 	free_substrings(input_stack);
 	exit(1);
+}
+
+void	get_out(int argc, char **input_stack, t_stack *new_input_stack)
+{
+	if (argc == 2)
+		ft_exit_error(input_stack, new_input_stack);
+	else
+		ft_exit(new_input_stack);
 }
