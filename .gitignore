@@ -1,6 +1,8 @@
+.idea
 *.o
 *.a
 push_swap
 *visualizer*
-*tester
+*tester*
+*Tester
 checker
