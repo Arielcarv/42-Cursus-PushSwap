@@ -91,7 +91,7 @@ printf "$CYAN Run checker with valid parameters, and write an action with one or
 
 
 printf "$MAGENTA\n -> BONUS - CHECKER PROGRAM - FALSE TESTS $RESET \n"
-printf "$CYAN Run checker with the following command \"$>./checker 0 9 1 8 2 7 3 6 4 5\" then write the following valid action list \"[sa, pb, rrr]\". Checker should display \"KO\". $RESET \n"
+printf "$CYAN Run checker with the following command \"$>./checker 0 9 1 8 2 7 3 6 4 5\" then write the following valid action list \"[sa, pb, rrr]\". Checker should display \"KO\". Ctrl+D to FINISH. $RESET \n"
 ./checker 0 9 1 8 2 7 3 6 4 5
 
 printf "$CYAN Run checker with a valid list as parameter of your choice then write a valid instruction list that doesn't order the integers. Checker should display \"KO\". You'll have to specifically check that the program wasn't developed to only answer correctly on the test included in this scale. You should repeat this test couple of times with several permutations before you validate it. $RESET \n"
