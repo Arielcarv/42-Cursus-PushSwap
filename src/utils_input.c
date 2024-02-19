@@ -6,11 +6,18 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:18:51 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/09 19:51:03 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/14 18:21:04 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_is_sign(char letter)
+{
+	if (letter == '-' || letter == '+')
+		return (1);
+	return (0);
+}
 
 int	ft_check_duplicate(t_stack *stack_a)
 {

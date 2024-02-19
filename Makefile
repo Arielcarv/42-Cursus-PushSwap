@@ -6,7 +6,7 @@
 #    By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 16:58:50 by arcarval          #+#    #+#              #
-#    Updated: 2024/02/09 19:49:23 by arcarval         ###   ########.fr        #
+#    Updated: 2024/02/14 18:39:44 by arcarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,11 @@ PUSH_SWAP_SRCS		=	push_swap.c			operations_swap.c	operations_push.c \
 
 PUSH_SWAP_OBJS		=	$(addprefix $(OBJ_PATH), $(PUSH_SWAP_SRCS:.c=.o))
 
-PUSH_SWAP_BONUS_SRCS=	checker.c	get_next_line_utils.c	get_next_line.c \
+PUSH_SWAP_BONUS_SRCS=	checker.c			get_next_line_utils.c		get_next_line.c \
 						operations_swap.c	operations_push.c \
 						operations_rotate.c	operations_reverse_rotate.c \
-						input_validations.c	utils.c			utils_exit.c	utils_input.c
+						input_validations.c	utils.c		utils_exit.c	utils_input.c \
+						ft_atoi_push_bonus.c
 
 PUSH_SWAP_BONUS_OBJS=	$(addprefix $(OBJ_BONUS_PATH), $(PUSH_SWAP_BONUS_SRCS:.c=.o))
 

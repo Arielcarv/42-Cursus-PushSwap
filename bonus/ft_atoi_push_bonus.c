@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_push.c                                     :+:      :+:    :+:   */
+/*   ft_atoi_push_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:18:17 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/14 18:22:22 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/14 18:36:46 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static int	ft_is_whitespace(char letter)
 {
@@ -42,7 +42,7 @@ static int	is_min_max_int(char const *str, int signal, int number)
 	return (0);
 }
 
-int	ft_atoi_push(int argc, char const *str,
+int	ft_atoi_push_bonus(int argc, char const *str,
 				char **input_stack, t_stack *new_input_stack)
 {
 	int	number;
