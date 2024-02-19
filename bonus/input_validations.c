@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:50:25 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/14 18:39:00 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/19 14:50:35 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ static void	input_checks(int argc, int i,
 		ft_exit(new_stack);
 }
 
-
 static void	check_non_digit(int i, char **input_stack)
 {
 	int	x;
@@ -93,7 +92,6 @@ t_stack	*process_input(int argc, char **argv)
 	while (input_stack[++i])
 	{
 		input_checks(argc, i, input_stack, new_input_stack);
-		// ft_lstadd_back(&new_input_stack, ft_lstnew(ft_atoi_push_bonus(input_stack[i])));
 		ft_lstadd_back(&new_input_stack,
 			ft_lstnew(
 				ft_atoi_push_bonus(argc, input_stack[i],
