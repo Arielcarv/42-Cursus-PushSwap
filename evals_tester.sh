@@ -68,6 +68,7 @@ ARG=$(python3 -c "import random; print(' '.join(map(str, random.sample(range(100
 printf "$MAGENTA\n -> PUSH SWAP - ADVANCED VERSION $RESET \n"
 ARG=$(python3 -c "import random; print(' '.join(map(str, random.sample(range(1000), 500))) )"); ./push_swap $ARG | ./checker_linux $ARG
 
+#############################################################################################################
 
 printf "$MAGENTA\n -> BONUS $RESET \n"
 printf "$MAGENTA\n -> BONUS - CHECKER PROGRAM - ERROR MANAGEMENT $RESET \n"
