@@ -6,7 +6,7 @@
 /*   By: arcarval <arcarval@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:14:09 by arcarval          #+#    #+#             */
-/*   Updated: 2024/02/19 21:07:41 by arcarval         ###   ########.fr       */
+/*   Updated: 2024/02/21 12:16:08 by arcarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ static char	*update_static_buffer(char *static_buffer)
 	int		size_with_compensation;
 
 	if (!static_buffer[size_or_linebreak(static_buffer)]
-		|| static_buffer[size_or_linebreak(static_buffer)] == '\n')
+		|| !ft_strncmp(
+			"\n\0", &static_buffer[size_or_linebreak(static_buffer)], 2))
 	{
 		free(static_buffer);
 		return (NULL);
